@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-All Hands on Deck is a card app with a Rails API backend and a React frontend. Players can create a new deck with the standard 52-cards, and then draw five cards from that deck in perpetuum until they're out of cards. At which point, they can (and will be prompted to!) simply create a new deck. 🃏👌🏼
+All Hands on Deck is a card app with a Rails API backend and a React frontend. Players can create a new deck with the standard 52 cards, then draw five cards from that deck in perpetuum until they're out. At which point, they can (and will be prompted to!) simply create a new deck. 🃏👌🏼
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ All Hands on Deck is a card app with a Rails API backend and a React frontend. P
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Clone down the repo and with the Rails backend server running, in the root of the project directory run:
+Clone down the repo and, with the Rails backend server running, in the root of the project directory run:
 
 `npm install`
 
@@ -18,7 +18,7 @@ then:
 
 `npm start`
 
-The first option is to create a "New Deck" of cards, after which the next option to "Draw Five" and from there on, happy card playing! 🤙🏼
+The first option is to create a "New Deck" of cards, after which is the option to "Draw Five", and from there on, happy card playing! 🤙🏼
 
 ## Frontend Link
 
