@@ -4,7 +4,7 @@
 
 All Hands on Deck is a card app with a Rails API backend and a React frontend. Players can create a new deck with the standard 52-cards, and then draw five cards from that deck in perpetuum until they're out of cards. At which point, they can (and will be prompted to!) simply create a new deck. 🃏👌🏼
 
-## GettingStarted
+## Getting Started
 
 ### Installing
 
