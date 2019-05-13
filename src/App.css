@@ -1,33 +1,113 @@
+body {
+  overflow: hidden;
+  color: #444;
+  font: 2em Sansita, sans-serif;
+}
+
 .App {
+  background-image: url('./images/Card_Table4.jpg');
+  min-height: 100vh;
+  overflow: hidden;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
+  font-size: 30px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.gif-image {
+  height: 40vh;
+  width: 50vh;
+  padding: 50px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.five-cards {
+  display: flex;
+  justify-content: center;
+  border:  1px solid blue;
+  margin: 50px;
+}
+
+.card-container {
+  border: 1px solid green;
+  position: relative;
+}
+
+* { box-sizing: border-box; }
+
+.playing-card {
+  height: 30vh;
+  width: 20vh;
+  border: 5px solid black;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px 10px;
+  background-color: white;
+  color: black;
+}
+
+.suit-img-main {
+  max-width:100%;
+  top: 50%;
+  position: relative;
+  transform: translateY(-50%);
+  resizeMode: 'contain';
+}
+
+.large {
+    height: 100px;
+    width: 100px;
+    text-align: center;
   }
-  to {
-    transform: rotate(360deg);
-  }
+
+.suit-small {
+  width: 18px;
+  height: 18px;
+  position: relative;
+  resizeMode: 'contain'
+}
+
+#black {
+  color: black;
+}
+
+#red {
+  color: red;
+}
+
+.top-left {
+  font-size: 25px;
+  width: 10px;
+  margin: 20px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.bottom-right {
+  font-size: 25px;
+  width: 10px;
+  margin: 20px;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.flip {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.card-back {
+  /* -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH"; */
 }
