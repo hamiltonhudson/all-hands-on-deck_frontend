@@ -1,68 +1,43 @@
+# All Hands On Deck - Backend README
+
+## Project Overview
+
+All Hands on Deck is a card app with a Rails API backend and a React frontend. Players can create a new deck with the standard 52-cards, and then draw five cards from that deck in perpetuum until they're out of cards. At which point, they can (and will be prompted to!) simply create a new deck. 🃏👌🏼
+
+##GettingStarted
+
+### Installing
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Clone down the repo and with the Rails backend server running, in the root of the project directory run:
 
-In the project directory, you can run:
+`npm install`
 
-### `npm start`
+then:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`npm start`
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+The first option is to create a "New Deck" of cards, after which the next option to "Draw Five" and from there on, happy card playing! 🤙🏼
 
-### `npm test`
+## Frontend Link
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Backend-AllHandsOnDeck](https://github.com/ehamiltonhudson/all-hands-on-deck-backend)
 
-### `npm run build`
+## Demo Video
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[AllHandsOnDeck-DEMO.mov](https://drive.google.com/file/d/1bIxkjxcNPtMsmMya9udP75HXTL89zgec/view?usp=sharing)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Hamilton Hudson**
 
-### `npm run eject`
+≫ ehamiltonhudson@gmail.com<br/>
+↳ *LinkedIn*: https://www.linkedin.com/in/hamiltonhudson<br/>
+↳ *Website*: https://hamiltonhudson.myportfolio.com<br/>
+↳ *Blog*: https://ehhudson.wordpress.com<br/>
+↳ *Twitter*: https://twitter.com/HamiltonHudson
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## License
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project is licensed under the MIT License - see the [LICENSE.md](/LICENSE) file for details.
