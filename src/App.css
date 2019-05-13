@@ -1,11 +1,9 @@
 body {
   overflow: hidden;
-  color: #444;
-  font: 2em Sansita, sans-serif;
 }
 
 .App {
-  background-image: url('./images/Card_Table4.jpg');
+  background-image: url('./images/Card_Table2.jpg');
   min-height: 100vh;
   overflow: hidden;
   text-align: center;
@@ -13,25 +11,86 @@ body {
 
 .App-header {
   text-align: center;
-  font-size: 30px;
-  color: white;
+  font-family: 'Prequel Regular';
+  font-size: 50px;
+  color: #fff;
+  animation: rubberBand;
+  animation-duration: 3s;
 }
 
-.gif-image {
-  height: 40vh;
-  width: 50vh;
-  padding: 50px;
+@font-face {
+  font-family: 'Prequel Regular';
+  src: local('Prequel Regular'), url(./fonts/PrequelDEMO-Regular.ttf) format('woff');
 }
+@font-face {
+  font-family: 'Big Noodle Titling';
+  src: local('Big Noodle Titling'), url(./fonts/big_noodle_titling.ttf) format('woff');
+}
+
+.button {
+  font-family: 'Big Noodle Titling';
+  font-size: 30px;
+  color: rgb(94, 221, 114);
+  text-shadow: 2px 2px 4px #000000;
+  padding: 6px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 5px solid #000;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #911f38 30%, #1c0e20 90%);
+  padding: 8px;
+  color: #fff;
+}
+
+.draw {
+  animation: pulse;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.five-gif-in {
+  height: 50vh;
+  width: 60vh;
+  padding: 50px;
+  resizeMode: 'contain';
+  animation: fadeInLeft;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  position: absolute;
+}
+
+.five-gif-out {
+  height: 50vh;
+  width: 60vh;
+  padding: 50px;
+  resizeMode: 'contain';
+  animation: fadeOutRight;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+}
+
+.fast-gif {
+  height: 65vh;
+  width: 55vh;
+  padding: 50px;
+  resizeMode: 'contain';
+  animation: flash;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+}
+
 
 .five-cards {
   display: flex;
   justify-content: center;
-  border:  1px solid blue;
   margin: 50px;
 }
 
 .card-container {
-  border: 1px solid green;
   position: relative;
 }
 
@@ -40,12 +99,14 @@ body {
 .playing-card {
   height: 30vh;
   width: 20vh;
-  border: 5px solid black;
+  border: 5px solid #000;
   border-radius: 15px;
   margin: 10px;
   padding: 10px 10px;
-  background-color: white;
-  color: black;
+  background-color: #fff;
+  color: #000;
+  animation-duration: 1.5s;
+  animation-delay: 1s
 }
 
 .suit-img-main {
@@ -57,9 +118,9 @@ body {
 }
 
 .large {
-    height: 100px;
-    width: 100px;
-    text-align: center;
+  height: 100px;
+  width: 100px;
+  text-align: center;
   }
 
 .suit-small {
@@ -70,7 +131,7 @@ body {
 }
 
 #black {
-  color: black;
+  color: #000;
 }
 
 #red {
@@ -95,7 +156,7 @@ body {
   right: 0px;
 }
 
-.flip {
+.reverse {
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -104,10 +165,15 @@ body {
 }
 
 .card-back {
-  /* -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
-  -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
-  -ms-filter: "FlipH"; */
+  height: 30vh;
+  width: 20vh;
+  border: 5px solid #000;
+  border-radius: 20px;
+  margin: 5px;
+  animation-duration: 1.5s;
+}
+
+#overlay {
+  position: fixed;
+  display: flex;
 }

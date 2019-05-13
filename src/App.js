@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Card from './components/Card';
 import './App.css';
-import animatedFiveCards from './images/animated-five-cards.gif'
+import fiveAnimated from './images/animated-five-cards.gif'
+import fastCards from './images/fast-cards.gif'
 
 const decksAddress = 'http://localhost:3000/api/v1/decks/'
 
@@ -13,7 +14,16 @@ class App extends Component {
     deck: [],
     fiveDrawn: false,
     currentCards: [],
+    gifReveal: false,
   }
+
+
+  componentDidMount() {
+    setTimeout( () => {
+        this.setState({gifReveal: true});
+    }, 3000);
+  }
+
 
   getNewDeck = () => {
     const postConfig = {
@@ -31,7 +41,6 @@ class App extends Component {
     fetch(decksAddress, postConfig)
     .then(r => r.json())
     .then(result => {
-      console.log(result)
       let newDeck = result
       let newDeckId = result.id
       window.alert(`New Deck Created! ♠️♦️♣️♥️`)
@@ -39,22 +48,20 @@ class App extends Component {
         deck: newDeck.cards,
         deckId: newDeckId,
         currentCards: [],
-        fiveDrawn: false
+        fiveDrawn: false,
+        newDeck: true,
       })
     })
   }
 
+
   drawFive = () => {
-    console.log('this.state.deckId in DrawFive in Deck', this.state.deckId)
-    console.log('this.state.deck.cards.length', this.state.deck.length)
-    console.log('this.state.deck', this.state.deck)
     if (this.state.deckId === null || this.state.deck.length < 5) {
       window.alert('Please create a new deck!')
     } else {
       fetch(`${decksAddress}/${this.state.deckId}/drawfive`)
       .then(r => r.json())
       .then(result => {
-        console.log(result)
         let currentCards = result
         this.setState({
           currentCards: currentCards,
@@ -65,11 +72,11 @@ class App extends Component {
     }
   }
 
+
   cardCount = () => {
     fetch(`${decksAddress}/${this.state.deckId}`)
     .then(r => r.json())
     .then(result => {
-      console.log(result)
       let newDeck = result
       this.setState({
         deck: newDeck.cards,
@@ -83,37 +90,40 @@ class App extends Component {
     }
   }
 
+
   renderCards = () => {
     if (this.state.fiveDrawn === true) {
       return (
         <div className="five-cards">
-          {this.state.currentCards.map(currentCard => <Card key={currentCard.id} currentCard={currentCard} />)}
+          {this.state.currentCards.map(currentCard => <Card key={currentCard.id} currentCard={currentCard} deckId={this.state.deckId}/>)}
         </div>
       )
     } else {
       return (
-        <img className="gif-image" src={animatedFiveCards} alt="five-card-draw-gif" />
+        <div><img className="five-gif-in" src={fiveAnimated} alt="5-card-gif" /><img className="five-gif-out" src={fiveAnimated} alt="5-card-gif" /></div>
       )
     }
   }
+
 
   renderDeck = () => {
     if (this.state.deckId !== null) {
       return (
         <div className="row">
-          <button onClick={this.drawFive}> Draw Five! </button><br/>
+          <button className="button draw" onClick={this.drawFive}> Draw Five! </button><br/>
           {this.renderCards()}
         </div>
       )
     }
   }
 
+
   render() {
     return (
       <div className="App">
         <h3 className="App-header">All Hands On Deck <span role="img" aria-label="hand-wave">👋🏼</span></h3>
-        <button onClick={this.getNewDeck}> New Deck? </button><br/>
-        {this.renderDeck()}
+        <button className="button" onClick={this.getNewDeck}> New Deck? </button><br/>
+        {!this.state.newDeck ? this.state.gifReveal && <img className="fast-gif" src={fastCards} alt="fast-cards" /> : this.renderDeck() }
       </div>
     )
   }

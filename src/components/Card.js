@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import '../App.css';
 import spades from '../images/SPADES.png';
 import diamonds from '../images/DIAMONDS.png';
 import clubs from '../images/CLUBS.png';
 import hearts from '../images/HEARTS.png';
+import cardBack1 from '../images/card-back_1.jpg';
 
 class Card extends React.Component {
+  state = {
+    flipped: false,
+    deckIds: [],
+    cardBack: null,
+  }
+
 
   renderCardSuits = () => {
     if (this.props.currentCard.suit === 'SPADES') {
@@ -19,52 +26,66 @@ class Card extends React.Component {
     }
   }
 
+
   renderCardRanks = () => {
     switch(this.props.currentCard.suit) {
-      case 'SPADES':
+      case "SPADES":
         return (
-          <div className="playing-card" id="black">
-            <span className="top-left">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={spades} alt="spades-img"/></span>
-            {this.renderCardSuits()}
-            <span className="bottom-right flip">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={spades} alt="spades-img"/></span>
+          <div>
+            <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-1"/>
+            <div className="playing-card animated fadeIn" id="black">
+              <span className="top-left">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={spades} alt="spades-img"/></span>
+              {this.renderCardSuits()}
+              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={spades} alt="spades-img"/></span>
+            </div>
           </div>
         )
       case "DIAMONDS":
         return (
-          <div className="playing-card" id="red">
-            <span className="top-left">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={diamonds} alt="diamonds-img"/></span>
-            {this.renderCardSuits()}
-            <span className="bottom-right flip">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={diamonds} alt="diamonds-img"/></span>
+          <div>
+            <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-2"/>
+            <div className="playing-card fadeIn animated" id="red">
+              <span className="top-left">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={diamonds} alt="diamonds-img"/></span>
+              {this.renderCardSuits()}
+              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={diamonds} alt="diamonds-img"/></span>
+            </div>
           </div>
         )
       case "CLUBS":
         return (
-          <div className="playing-card" id="black">
-            <span className="top-left">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={clubs} alt="clubs-img"/></span>
-            {this.renderCardSuits()}
-            <span className="bottom-right flip">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={clubs} alt="clubs-img"/></span>
+          <div>
+            <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-3"/>
+            <div className="playing-card fadeIn animated" id="black">
+              <span className="top-left">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={clubs} alt="clubs-img"/></span>
+              {this.renderCardSuits()}
+              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={clubs} alt="clubs-img"/></span>
+            </div>
           </div>
         )
       case "HEARTS":
         return (
-          <div className="playing-card" id="red">
-            <span className="top-left">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={hearts} alt="hearts-img"/></span>
-            {this.renderCardSuits()}
-            <span className="bottom-right flip">{this.props.currentCard.rank[0]}
-              <img className="suit-small" src={hearts} alt="hearts-img"/></span>
+          <div>
+            <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-4"/>
+            <div className="playing-card fadeIn animated" id="red">
+              <span className="top-left">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={hearts} alt="hearts-img"/></span>
+              {this.renderCardSuits()}
+              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
+                <img className="suit-small" src={hearts} alt="hearts-img"/></span>
+            </div>
           </div>
         )
       default:
-        return null;
+        return null
+      }
     }
-  }
+
 
   render() {
     return(
@@ -74,5 +95,6 @@ class Card extends React.Component {
     )
   }
 }
+
 
 export default Card;
