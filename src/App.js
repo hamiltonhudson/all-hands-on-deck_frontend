@@ -43,7 +43,7 @@ class App extends Component {
     .then(result => {
       let newDeck = result
       let newDeckId = result.id
-      window.alert(`New Deck Created! ♠️♦️♣️♥️`)
+      window.alert(`Nice! New deck created ♠️♦️♣️♥️`)
       this.setState({
         deck: newDeck.cards,
         deckId: newDeckId,
@@ -121,7 +121,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h3 className="App-header">All Hands On Deck <span role="img" aria-label="hand-wave">👋🏼</span></h3>
+        <h3 className="App-header"><span role="img" aria-label="hand-wave">👋🏼 </span> All Hands On Deck <span role="img" aria-label="hand-wave">👋🏼</span></h3>
         <button className="button" onClick={this.getNewDeck}> New Deck? </button><br/>
         {!this.state.newDeck ? this.state.gifReveal && <img className="fast-gif" src={fastCards} alt="fast-cards" /> : this.renderDeck() }
       </div>

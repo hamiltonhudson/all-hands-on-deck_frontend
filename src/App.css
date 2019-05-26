@@ -91,7 +91,10 @@ body {
 }
 
 .card-container {
+  max-width: 100%;
   position: relative;
+  resize-mode: contain;
+  display: inline;
 }
 
 * { box-sizing: border-box; }
@@ -106,28 +109,42 @@ body {
   background-color: #fff;
   color: #000;
   animation-duration: 1.5s;
-  animation-delay: 1s
+  animation-delay: 1s;
+  display: block;
 }
 
 .suit-img-main {
   max-width:100%;
   top: 50%;
+  height: 100px;
+  width: 100px;
   position: relative;
   transform: translateY(-50%);
   resizeMode: 'contain';
 }
 
 .large {
-  height: 100px;
-  width: 100px;
+  max-width: 75%;
+  height: auto;
+  width: auto;
   text-align: center;
+  resize-mode: contain
   }
 
 .suit-small {
-  width: 18px;
-  height: 18px;
+  max-width: 160%;
+  height: auto;
+  width: auto;
+  margin: 0px;
   position: relative;
-  resizeMode: 'contain'
+  display: flex;
+  resize-mode: contain
+}
+
+.diamonds {
+  max-width: 170%;
+  top: -1.5px;
+  left: -1px;
 }
 
 #black {
@@ -138,22 +155,35 @@ body {
   color: red;
 }
 
+.rank {
+  font-size: 1.9vw;
+  margin-left: 1px;
+}
+
 .top-left {
-  font-size: 25px;
-  width: 10px;
+  font-size: 100%;
+  display: inline-block;
+  max-width: 7%;
+  height: auto;
+  width: auto;
   margin: 20px;
   position: absolute;
-  top: 0px;
+  top: -5px;
   left: 0px;
+  resize-mode: contain;
 }
 
 .bottom-right {
-  font-size: 25px;
-  width: 10px;
+  font-size: 100%;
+  display: inline-block;
+  max-width: 7%;
+  height: auto;
+  width: auto;
   margin: 20px;
   position: absolute;
-  bottom: 0px;
+  bottom: -5px;
   right: 0px;
+  resize-mode: contain;
 }
 
 .reverse {
@@ -167,10 +197,12 @@ body {
 .card-back {
   height: 30vh;
   width: 20vh;
-  border: 5px solid #000;
+  border: 6px solid #000;
   border-radius: 20px;
   margin: 5px;
   animation-duration: 1.5s;
+  display: inherit;
+  position: absolute;
 }
 
 #overlay {

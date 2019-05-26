@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import '../App.css';
 import spades from '../images/SPADES.png';
 import diamonds from '../images/DIAMONDS.png';
@@ -18,9 +18,9 @@ class Card extends React.Component {
     if (this.props.currentCard.suit === 'SPADES') {
       return <img className="suit-img-main large" src={spades} alt="spades-img"/>
     } else if (this.props.currentCard.suit === 'DIAMONDS') {
-      return <img className="suit-img-main large" src={diamonds} alt="diamonds-img"/>
+      return <img className="suit-img-main large" src={diamonds} alt="diamonds-img" style={{"maxWidth": "90%"}}/>
     } else if (this.props.currentCard.suit === 'CLUBS') {
-      return <img className="suit-img-main large" src={clubs} alt="clubs-img"/>
+      return <img className="suit-img-main large" src={clubs} alt="clubs-img" style={{"maxWidth": "85%"}}/>
     } else if (this.props.currentCard.suit === 'HEARTS') {
       return <img className="suit-img-main large" src={hearts} alt="hearts-img"/>
     }
@@ -34,11 +34,11 @@ class Card extends React.Component {
           <div>
             <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-1"/>
             <div className="playing-card animated fadeIn" id="black">
-              <span className="top-left">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={spades} alt="spades-img"/></span>
+              <div className="top-left"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small" src={spades} alt="spades-img"/></div>
               {this.renderCardSuits()}
-              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={spades} alt="spades-img"/></span>
+              <div className="bottom-right reverse"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small" src={spades} alt="spades-img"/></div>
             </div>
           </div>
         )
@@ -47,11 +47,11 @@ class Card extends React.Component {
           <div>
             <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-2"/>
             <div className="playing-card fadeIn animated" id="red">
-              <span className="top-left">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={diamonds} alt="diamonds-img"/></span>
+              <div className="top-left"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small diamonds" src={diamonds} alt="diamonds-img"/></div>
               {this.renderCardSuits()}
-              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={diamonds} alt="diamonds-img"/></span>
+              <div className="bottom-right reverse"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small diamonds" src={diamonds} alt="diamonds-img"/></div>
             </div>
           </div>
         )
@@ -60,11 +60,11 @@ class Card extends React.Component {
           <div>
             <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-3"/>
             <div className="playing-card fadeIn animated" id="black">
-              <span className="top-left">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={clubs} alt="clubs-img"/></span>
+              <div className="top-left"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small" src={clubs} alt="clubs-img"/></div>
               {this.renderCardSuits()}
-              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={clubs} alt="clubs-img"/></span>
+              <div className="bottom-right reverse"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small" src={clubs} alt="clubs-img"/></div>
             </div>
           </div>
         )
@@ -73,11 +73,11 @@ class Card extends React.Component {
           <div>
             <img className="card-back animated flip fadeOut" id="overlay" src={cardBack1} alt="card-back-4"/>
             <div className="playing-card fadeIn animated" id="red">
-              <span className="top-left">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={hearts} alt="hearts-img"/></span>
+              <div className="top-left"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small" src={hearts} alt="hearts-img"/></div>
               {this.renderCardSuits()}
-              <span className="bottom-right reverse">{this.props.currentCard.rank[0]}
-                <img className="suit-small" src={hearts} alt="hearts-img"/></span>
+              <div className="bottom-right reverse"><span className="rank">{this.props.currentCard.rank[0]}</span>
+                <img className="suit-small" src={hearts} alt="hearts-img"/></div>
             </div>
           </div>
         )
