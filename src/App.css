@@ -201,8 +201,6 @@ body {
   border-radius: 20px;
   margin: 5px;
   animation-duration: 1.5s;
-  display: inherit;
-  position: absolute;
 }
 
 #overlay {
